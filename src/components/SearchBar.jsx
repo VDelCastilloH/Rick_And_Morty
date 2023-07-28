@@ -1,7 +1,7 @@
 export default function SearchBar(props) {
    const buscarPersonaje = ()=>{
       const busca = document.querySelector('#buscar');
-      console.log(busca);
+      //console.log(busca);
       props.onSearch(busca.value);
       busca.value = "";
    }
