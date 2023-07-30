@@ -12,6 +12,7 @@ function App() {
    
    const [characters,setCharacters] = useState([]);
    
+   //La funcion onSearch extrae todos los personajes de la api
    function onSearch(id){
       axios(`https://rickandmortyapi.com/api/character/${id}`)
       .then((respuesta) => {
@@ -26,6 +27,7 @@ function App() {
       .catch((err) => window.alert(err));
    };
 
+   //La funcion onClose eliminaa un personaje por su id
    function onClose(id){
       setCharacters(characters.filter(char => char.id !== id))
    }
@@ -34,17 +36,6 @@ function App() {
       <div className='App'>
          <Nav onSearch = {onSearch}/>
          <Cards characters={characters} onClose = {onClose} />
-         {/* <SearchBar onSearch={(characterID) => window.alert(characterID)} /> 
-         <Card
-            id={Rick.id}
-            name={Rick.name}
-            status={Rick.status}
-            species={Rick.species}
-            gender={Rick.gender}
-            origin={Rick.origin.name}
-            image={Rick.image}
-            onClose={() => window.alert('Emulamos que se cierra la card')}
-         /> */}
       </div>
    );
 }
