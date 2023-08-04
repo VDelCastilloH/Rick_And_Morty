@@ -24,14 +24,14 @@ function Detail(){
     return(
         <div>
             {character.name && (
-            <>
-                <h1>{character.name}</h1>
-                <h2>STATUS | {character.status}</h2>
-                <h2>SPECIE | {character.species}</h2>
-                <h2>GENDER | {character.gender}</h2>
-                <h2>ORIGIN | {character.origin.name}</h2>
-                <img src={character.image} alt="imagen del personaje"/>
-            </>
+                <>
+                <h1>{character?.name}</h1>
+                <h2>STATUS | {character?.status}</h2>
+                <h2>SPECIE | {character?.species}</h2>
+                <h2>GENDER | {character?.gender}</h2>
+                <h2>ORIGIN | {character?.origin?.name}</h2>
+                <img src={character?.image} alt="imagen del personaje"/>
+                </>                
             )}
         </div>
     );    

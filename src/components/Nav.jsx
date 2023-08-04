@@ -7,7 +7,7 @@ function Nav(props){
     //La funcion random genera un id aleatorio para renderizar un nuevo personaje
     function ramdon() {
         const numAle = Math.floor(Math.random() * 826) + 1
-         props.onSearch(numAle);    
+        props.onSearch(numAle);    
     }
     
     return (
