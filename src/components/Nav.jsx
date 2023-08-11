@@ -12,12 +12,9 @@ function Nav(props){
     
     return (
         <div>
-            <Link to='/home'>
-                <button>Home</button>
-            </Link>
-            <Link to='/about'> 
-                <button>About</button>
-            </Link>  
+            <Link to='/home'> <button>Home</button> </Link>
+            <Link to="/favorites"> <button> ❤️ </button> </Link>
+            <Link to='/about'> <button>About</button> </Link>  
             <SearchBar onSearch = {props.onSearch}/>
             <button onClick={ramdon}>Ramdon</button>
         </div>
