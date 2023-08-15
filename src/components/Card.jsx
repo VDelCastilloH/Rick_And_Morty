@@ -38,7 +38,7 @@ function Card(props) {
          }
          <button onClick={()=> props.onClose(props.id)}>❌</button>
          <Link to={`/detail/${props.id}`}>
-         <h2>{props.name}</h2>
+         <h2>{props.name} | {props.id}</h2>
          </Link>
          <img src={props.image} alt='Imagen de personaje' /> 
          <h2>{props.status}</h2>
