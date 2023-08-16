@@ -13,7 +13,8 @@ function rootReducer (state=initialState,action){
             };
         
         case REMOVE_FAV:
-            return {...state, myFavorites: state.myFavorites.filter((char)=>{return char.id !== Number(action.payload)})}
+            let newfavorite = state.myFavorites.filter((char)=>{return char.id !== Number(action.payload)})
+            return {...state, myFavorites: newfavorite, allFavorites: newfavorite }
         
         case FILTER:
             let favoriteFiltered = action.payload==="All"? state.allFavorites : state.allFavorites.filter(char => char.gender=== action.payload)
