@@ -43,7 +43,8 @@ function App() {
 
    //La funcion onSearch extrae todos los personajes de la api
    function onSearch(id){
-      axios(`https://rickandmortyapi.com/api/character/${id}`)
+      //axios(`https://rickandmortyapi.com/api/character/${id}`)
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then((respuesta) => {
          if(!characters.find((char)=> char.id === respuesta.data.id)){
          if (respuesta.data.name) {
