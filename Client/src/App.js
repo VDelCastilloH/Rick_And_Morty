@@ -25,16 +25,27 @@ function App() {
    //console.log(pathname);
    const navigate = useNavigate();
 
-   const EMAIL = "viti@gmail.com"
-   const PASSWORD = "Pass123"
+   // const EMAIL = "viti@gmail.com"
+   // const PASSWORD = "Pass123"
+
+   // function login(userData) {
+   //    if (userData.password === PASSWORD && userData.email === EMAIL) {
+   //       setAccess(true);
+   //       navigate('/home');
+   //    } else {
+   //       alert('Usuario o contraseña incorrecta')
+   //    }
+   // }
 
    function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
-      } else {
-         alert('Usuario o contraseña incorrecta')
-      }
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(`${URL}?email=${email}&password=${password}`)
+      .then(({ data }) => {
+         const { access } = data;
+         setAccess(access);
+         access && navigate('/home');
+      });
    }
 
    useEffect(()=>{
