@@ -20,12 +20,19 @@ function rootReducer (state=initialState,action){
 
             return { ...state, myFavorites: action.payload };
 
+        // case FILTER:
+        //     let favoriteFiltered = action.payload==="All"? state.allFavorites : state.allFavorites.filter(char => char.gender=== action.payload)
+        //     return {
+        //         ...state,
+        //         myFavorites: favoriteFiltered
+        //     }
+
         case FILTER:
-            let favoriteFiltered = action.payload==="All"? state.allFavorites : state.allFavorites.filter(char => char.gender=== action.payload)
             return {
                 ...state,
-                myFavorites: favoriteFiltered
-            }
+                myFavorites: action.payload === "All" ? [...state.allFavorites] : state.allFavorites.filter((character) => 
+                character.gender === action.payload),
+            };
 
         case ORDER:
             let favoritesOrdered = state.myFavorites.sort((a,b)=>{
