@@ -6,8 +6,8 @@ import { connect } from "react-redux";
 function Card(props) {
    
    const [isFav,setIsFav] = useState(false);
-
    useEffect(() => {
+      console.log(props.myFavorites);
       props.myFavorites.forEach((fav) => {
          if (fav.id === props.id) {
             setIsFav(true);

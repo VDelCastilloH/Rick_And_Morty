@@ -46,7 +46,7 @@ function App() {
             setAccess(access);
             access ? navigate('/home') : alert ("Ddatos incorrectos");
       } catch(error) {
-        console.log(error.message)          
+        console.log(error)          
       }
    }
 
