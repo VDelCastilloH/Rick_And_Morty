@@ -9,7 +9,7 @@ async function getCharById(req,res){
     const {name, gender, species, origin=origin.name, image, status} = response.data;
     const character = {name, gender, species, origin, image, status, id};
     //console.log(character)
-    name ? res.json(character): res.status(404).json({message:'Not found'});
+    name ? res.status(200).json(character): res.status(404).json({message:'Not found'});
     } catch (error) {
         res.status(500).json({message : error})
     } 
