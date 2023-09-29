@@ -1,9 +1,15 @@
 const PORT = 3001;
 const server = require('./server');
 
-server.listen(PORT, ()=>{
+const {conn} = require('./DB_connection');
+
+conn.sync({force:true})
+.then(()=> {  
+    server.listen(PORT, ()=>{
     console.log(`Servidor corriendo en puerto: ${PORT}`)
-});
+})
+})
+.catch((err)=>console.log(err));
 
 // const http  = require("http");
 // const PUERTO = 3001; 
