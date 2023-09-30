@@ -7,7 +7,7 @@ async function getCharById(req,res){
    try {
     const response = await axios(`${URL}${id}`);
     const {name, gender, species, origin=origin.name, image, status} = response.data;
-    const character = {name, gender, species, origin, image, status, id};
+    const character = {id, status,name, gender, species, origin, image};
     //console.log(character)
     name ? res.status(200).json(character): res.status(404).json({message:'Not found'});
     } catch (error) {
